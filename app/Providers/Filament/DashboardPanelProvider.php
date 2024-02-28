@@ -31,15 +31,20 @@ class DashboardPanelProvider extends PanelProvider
             ->id('dashboard')
             ->path('dashboard')
             ->login()
+            ->registration()
+            ->passwordReset()
+            ->emailVerification()
+            ->profile()
             //color hexadecimal para la app
             ->colors([
                 'primary' => Color::hex('#BD0940'),
             ])
             //logo para modo claro y oscuro
+
             ->brandLogo(asset('images/logo.png'))
             ->darkModeBrandLogo(asset('images/logo_dark.png'))
             //Altura del logo
-            ->brandLogoHeight('4rem')
+            ->brandLogoHeight(fn () => auth()->check() ? '4rem' : '6rem')
             //barra de navegacion contraible
             ->sidebarCollapsibleOnDesktop()
             //ocultar breadcumbs
