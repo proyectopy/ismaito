@@ -8,8 +8,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
+
+
+
 class User extends Authenticatable
 {
+    protected static ?string $modelLabel = 'Usuario';
+    protected static ?string $pluralModelLabel = 'Usuarios';
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**

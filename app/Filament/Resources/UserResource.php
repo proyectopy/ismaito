@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
+
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
@@ -20,6 +21,13 @@ class UserResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
     protected static ?string $navigationGroup = 'Usuarios';
+
+
+
+    //protected static ?string $navigationLabel = 'usuarios';
+    //Pluralizar nombre de los Modelos
+    protected static ?string $modelLabel = 'Usuario';
+    protected static ?string $pluralModelLabel = 'Usuarios';
 
     public static function getNavigationBadge(): ?string
     {
