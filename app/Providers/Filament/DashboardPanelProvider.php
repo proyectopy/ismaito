@@ -2,9 +2,11 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Forms\Components\Group;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -27,12 +29,29 @@ class DashboardPanelProvider extends PanelProvider
             ->id('dashboard')
             ->path('dashboard')
             ->login()
+            //color hexadecimal para la app
             ->colors([
                 'primary' => Color::hex('#BD0940'),
             ])
+            //logo para modo claro y oscuro
             ->brandLogo(asset('images/logo.png'))
             ->darkModeBrandLogo(asset('images/logo_dark.png'))
+            //Altura del logo
             ->brandLogoHeight('4rem')
+            //barra de navegacion contraible
+            ->sidebarCollapsibleOnDesktop()
+            //ocultar breadcumbs
+            ->breadcrumbs(true) //false oculto true mostrar
+            //fuente personalizada
+            ->font('Quicksand')
+            //Enlaces al exterior
+            ->navigationItems([
+                NavigationItem::make('proyectopy.es')
+                    ->url('https://proyectopy.es/', shouldOpenInNewTab:true)
+                    ->icon('heroicon-o-link')
+                    ->group('Links externos')
+                    ->sort(2)
+            ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
