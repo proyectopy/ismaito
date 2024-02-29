@@ -25,6 +25,7 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 
 class DashboardPanelProvider extends PanelProvider
 {
@@ -47,6 +48,7 @@ class DashboardPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::hex('#BD0940'),
             ])
+            ->plugin(FilamentSpatieLaravelBackupPlugin::make())
             //prueba
 
 
@@ -106,6 +108,7 @@ class DashboardPanelProvider extends PanelProvider
                 // Stat::make('Ciudades Registradas', City::query()->count()),
                 //Widgets\FilamentInfoWidget::class,
                 Widgets\PersonalInfoWidget::class,
+
             ])
             ->middleware([
                 EncryptCookies::class,
