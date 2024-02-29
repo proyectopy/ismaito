@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use Filament\Pages;
 use Filament\Panel;
+use App\Models\City;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use App\Filament\Pages\Profile;
@@ -14,6 +15,7 @@ use Filament\Navigation\UserMenuItem;
 use Filament\Navigation\NavigationItem;
 use Filament\Navigation\NavigationGroup;
 use Filament\Http\Middleware\Authenticate;
+use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -101,7 +103,9 @@ class DashboardPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
+                // Stat::make('Ciudades Registradas', City::query()->count()),
                 //Widgets\FilamentInfoWidget::class,
+                Widgets\PersonalInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
