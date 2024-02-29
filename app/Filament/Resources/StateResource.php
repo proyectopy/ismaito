@@ -26,6 +26,11 @@ class StateResource extends Resource
     protected static ?string $modelLabel = 'Provincia';
     protected static ?string $pluralModelLabel = 'Provincias';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form

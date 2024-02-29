@@ -24,6 +24,11 @@ class CityResource extends Resource
     protected static ?string $modelLabel = 'Ciudad';
     protected static ?string $pluralModelLabel = 'Ciudades';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form

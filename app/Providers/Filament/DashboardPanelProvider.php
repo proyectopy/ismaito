@@ -2,28 +2,34 @@
 
 namespace App\Providers\Filament;
 
-use Filament\Forms\Components\Group;
-use Filament\Http\Middleware\Authenticate;
-use Filament\Http\Middleware\DisableBladeIconComponents;
-use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Navigation\MenuItem;
-use Filament\Navigation\NavigationItem;
-use Filament\Navigation\UserMenuItem;
 use Filament\Pages;
 use Filament\Panel;
-use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
 use Filament\Widgets;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Filament\PanelProvider;
+use App\Filament\Pages\Profile;
+use Filament\Navigation\MenuItem;
+use Filament\Support\Colors\Color;
+use Filament\Forms\Components\Group;
+use Filament\Navigation\UserMenuItem;
+use Filament\Navigation\NavigationItem;
+use Filament\Navigation\NavigationGroup;
+use Filament\Http\Middleware\Authenticate;
+use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
-use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Http\Middleware\DisableBladeIconComponents;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 
 class DashboardPanelProvider extends PanelProvider
 {
+    // public static function getNavigationBadge(): ?string
+    //             {
+    //                 return 'NEW';
+    //             }
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -39,8 +45,14 @@ class DashboardPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::hex('#BD0940'),
             ])
-            //logo para modo claro y oscuro
+            //prueba
 
+
+
+            //fin prueba
+            //favicon
+            ->favicon(asset('images/favicon.png'))
+            //logo para modo claro y oscuro
             ->brandLogo(asset('images/logo.png'))
             ->darkModeBrandLogo(asset('images/logo_dark.png'))
             //Altura del logo
@@ -79,8 +91,7 @@ class DashboardPanelProvider extends PanelProvider
                 MenuItem::make()
                 ->label('Configuración')
                 ->url('')
-                ->icon('heroicon-o-cog-6-tooth')
-
+                ->icon('heroicon-o-cog-6-tooth'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

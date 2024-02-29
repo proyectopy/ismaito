@@ -26,6 +26,11 @@ class CountryResource extends Resource
     protected static ?string $modelLabel = 'Pais';
     protected static ?string $pluralModelLabel = 'Paises';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -148,6 +153,13 @@ class CountryResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            CountryResource\Widgets\CountryOverview::class,
         ];
     }
 
