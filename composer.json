@@ -11,6 +11,8 @@
         "php": "^8.1",
         "altwaireb/laravel-countries-states-cities": "^1.0",
         "bezhansalleh/filament-language-switch": "^3.0",
+        "blade-ui-kit/blade-icons": "^1.6",
+        "codeat3/blade-carbon-icons": "^2.22",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",

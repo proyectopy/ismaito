@@ -53,11 +53,26 @@ class DashboardPanelProvider extends PanelProvider
             ->font('Quicksand')
             //Enlaces al exterior
             ->navigationItems([
-                NavigationItem::make('proyectopy.es')
+                NavigationItem::make('Mi Web')
                     ->url('https://proyectopy.es/', shouldOpenInNewTab:true)
-                    ->icon('heroicon-o-link')
+                    ->icon('heroicon-m-globe-alt')
                     ->group('Links externos')
-                    ->sort(2)
+                    ->sort(100),
+                NavigationItem::make('Mi Github')
+                    ->url('https://github.com/proyectopy', shouldOpenInNewTab:true)
+                    ->icon('carbon-logo-github')
+                    ->group('Links externos')
+                    ->sort(101),
+                NavigationItem::make('Youtube.')
+                    ->url('https://www.youtube.com/playlist?list=PLbFjjy1sD3hqpbPGYP9bxwyd2B79V09kV', shouldOpenInNewTab:true)
+                    ->icon('carbon-logo-youtube')
+                    ->group('Tutorial')
+                    ->sort(103),
+                NavigationItem::make('Codigo fuente.')
+                    ->url('https://github.com/elrincondeisma/curso-filamentphp-intranet', shouldOpenInNewTab:true)
+                    ->icon('carbon-ibm-watsonx-code-assistant-for-z-refactor')
+                    ->group('Tutorial')
+                    ->sort(103),
             ])
             //añadir items al menu de usuario
             ->userMenuItems([
