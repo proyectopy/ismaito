@@ -21,7 +21,9 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Swis\Filament\Backgrounds\ImageProviders\MyImages;
 use Filament\Http\Middleware\DisableBladeIconComponents;
+use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -49,6 +51,12 @@ class DashboardPanelProvider extends PanelProvider
                 'primary' => Color::hex('#BD0940'),
             ])
             ->plugin(FilamentSpatieLaravelBackupPlugin::make())
+            ->plugin(FilamentBackgroundsPlugin::make()
+            ->showAttribution(false)
+            ->imageProvider(
+                MyImages::make()
+                    ->directory('images/fondos')
+            ),)
             //prueba
 
 
