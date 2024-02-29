@@ -20,11 +20,10 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    protected static ?string $navigationGroup = 'Usuarios';
+    protected static ?string $navigationGroup = 'Gestión de Empleados';
 
+    //protected static ?int $navigationSort = 1;
 
-
-    //protected static ?string $navigationLabel = 'usuarios';
     //Pluralizar nombre de los Modelos
     protected static ?string $modelLabel = 'Empleado';
     protected static ?string $pluralModelLabel = 'Empleados';
