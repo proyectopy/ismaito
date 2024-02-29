@@ -156,12 +156,7 @@ class CountryResource extends Resource
         ];
     }
 
-    public static function getWidgets(): array
-    {
-        return [
-            CountryResource\Widgets\CountryOverview::class,
-        ];
-    }
+   
 
     public static function getPages(): array
     {
