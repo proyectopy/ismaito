@@ -26,8 +26,8 @@ class UserResource extends Resource
 
     //protected static ?string $navigationLabel = 'usuarios';
     //Pluralizar nombre de los Modelos
-    protected static ?string $modelLabel = 'Usuario';
-    protected static ?string $pluralModelLabel = 'Usuarios';
+    protected static ?string $modelLabel = 'Empleado';
+    protected static ?string $pluralModelLabel = 'Empleados';
 
     public static function getNavigationBadge(): ?string
     {
@@ -39,12 +39,17 @@ class UserResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('Nombre')
                     ->required(),
                 Forms\Components\TextInput::make('email')
+                    ->label('Email')
                     ->email()
                     ->required(),
-                Forms\Components\DateTimePicker::make('email_verified_at'),
+                Forms\Components\DateTimePicker::make('email_verified_at')
+                    ->label('Verificado'),
                 Forms\Components\TextInput::make('password')
+                    ->label('Clave')
+                    ->hiddenOn('edit')
                     ->password()
                     ->required(),
             ]);
@@ -55,18 +60,23 @@ class UserResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nombre')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
+                    ->label('Email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email_verified_at')
-                    ->dateTime()
+                    ->label('Verificado')
+                    ->since()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Creado')
+                    ->since()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Actualizado')
+                    ->since()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
