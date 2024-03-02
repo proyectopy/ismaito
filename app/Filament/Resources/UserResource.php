@@ -48,35 +48,40 @@ class UserResource extends Resource
                 ->columns(3)
                 ->schema([
                     Forms\Components\TextInput::make('name')
-                                ->label('Nombre')
-                                ->required(),
-                            Forms\Components\TextInput::make('email')
-                                ->label('Email')
-                                ->email()
-                                ->required(),
-                            // Forms\Components\DateTimePicker::make('email_verified_at')
-                            //     ->label('Verificado'),
-                            Forms\Components\TextInput::make('password')
-                                ->label('Clave')
-                                ->hiddenOn('edit')
-                                ->password()
-                                ->required(),
+                        ->label('Nombre')
+                        ->required(),
+                    Forms\Components\TextInput::make('email')
+                        ->label('Email')
+                        ->email()
+                        ->required(),
+                    // Forms\Components\DateTimePicker::make('email_verified_at')
+                    //     ->label('Verificado'),
+                    Forms\Components\TextInput::make('password')
+                        ->label('Clave')
+                        //->hiddenOn('edit')
+                        ->password()
+                        ->revealable()
+                        ->required(),
                 ]),
 
                 Section::make('Datos de Localización')
                 ->columns(3)
                 ->schema([
-                    Forms\Components\Select::make('country_id')
-                        ->relationship(name: 'Country', titleAttribute: 'name' )
-                        ->label('Pais')
-                        ->searchable()
-                        ->preload()
-                        ->live()
-                        ->afterStateUpdated(function (Set $set){
-                            $set('state_id', null);
-                            $set('city_id', null);
-                        })
-                        ->required(),
+                    Forms\Components\TextInput::make('address')
+                    ->columnSpan($span = 2)
+                        ->label('Direccion'),
+                    Forms\Components\TextInput::make('postal_code')
+                    ->columnSpan($span = 1)
+                        ->label('Codigo Postal'),
+                    Forms\Components\Select::make('city_id')
+                    ->label('Ciudad')
+                    ->options(fn (Get $get): Collection => City::query()
+                        ->where('state_id', $get ('state_id'))
+                        ->pluck('name','id'))
+                    ->searchable()
+                    ->preload()
+                    ->live()
+                    ->required(),
                     Forms\Components\Select::make('state_id')
                         ->label('Provincia')
                         ->options(fn (Get $get): Collection => State::query()
@@ -89,15 +94,19 @@ class UserResource extends Resource
                             $set('city_id', null);
                         })
                         ->required(),
-                    Forms\Components\Select::make('city_id')
-                        ->label('Ciudad')
-                        ->options(fn (Get $get): Collection => City::query()
-                            ->where('state_id', $get ('state_id'))
-                            ->pluck('name','id'))
+                    Forms\Components\Select::make('country_id')
+                        ->relationship(name: 'Country', titleAttribute: 'name' )
+                        ->label('Pais')
                         ->searchable()
                         ->preload()
                         ->live()
-                        ->required()
+                        ->afterStateUpdated(function (Set $set){
+                            $set('state_id', null);
+                            $set('city_id', null);
+                        })
+                        ->required(),
+
+
                 ])
             ]);
     }
