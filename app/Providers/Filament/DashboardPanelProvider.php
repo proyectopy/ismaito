@@ -68,18 +68,9 @@ class DashboardPanelProvider extends PanelProvider
                 ->rating('pg'),
             ])
             //prueba
-<<<<<<< HEAD
-=======
-            ->defaultAvatarProvider(GravatarProvider::class)
-            ->plugins([
-                GravatarPlugin::make()
-                ->default('robohash')
-                ->size(200)
-                ->rating('pg'),
-            ])
 
->>>>>>> f58e9bbe6d3a701cac565c4b84f5a48d78028178
 
+            
             //fin prueba
             //favicon
             ->favicon(asset('images/favicon.png'))
