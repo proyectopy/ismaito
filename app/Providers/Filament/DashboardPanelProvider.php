@@ -59,7 +59,7 @@ class DashboardPanelProvider extends PanelProvider
                 MyImages::make()
                     ->directory('images/fondos')
             ),)
-            //prueba
+            //mostrar gravatar
             ->defaultAvatarProvider(GravatarProvider::class)
             ->plugins([
                 GravatarPlugin::make()
@@ -67,8 +67,10 @@ class DashboardPanelProvider extends PanelProvider
                 ->size(200)
                 ->rating('pg'),
             ])
+            //prueba
 
 
+            
             //fin prueba
             //favicon
             ->favicon(asset('images/favicon.png'))
