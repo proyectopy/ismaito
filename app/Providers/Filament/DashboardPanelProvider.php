@@ -15,6 +15,8 @@ use Filament\Navigation\UserMenuItem;
 use Filament\Navigation\NavigationItem;
 use Filament\Navigation\NavigationGroup;
 use Filament\Http\Middleware\Authenticate;
+use Awcodes\FilamentGravatar\GravatarPlugin;
+use Awcodes\FilamentGravatar\GravatarProvider;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -57,9 +59,15 @@ class DashboardPanelProvider extends PanelProvider
                 MyImages::make()
                     ->directory('images/fondos')
             ),)
+            //mostrar gravatar
+            ->defaultAvatarProvider(GravatarProvider::class)
+            ->plugins([
+                GravatarPlugin::make()
+                ->default('robohash')
+                ->size(200)
+                ->rating('pg'),
+            ])
             //prueba
-
-
 
             //fin prueba
             //favicon
