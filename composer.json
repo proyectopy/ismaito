@@ -20,6 +20,7 @@
         "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "postare/blade-mdi": "^1.1",
         "shuvroroy/filament-spatie-laravel-backup": "^2.1",
         "swisnl/filament-backgrounds": "^1.1",
         "whitecube/laravel-cookie-consent": "^1.1"

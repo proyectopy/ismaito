@@ -70,7 +70,7 @@ class DashboardPanelProvider extends PanelProvider
             //prueba
 
 
-            
+
             //fin prueba
             //favicon
             ->favicon(asset('images/favicon.png'))
@@ -114,7 +114,12 @@ class DashboardPanelProvider extends PanelProvider
                 ->label('Configuración')
                 ->url('')
                 ->icon('heroicon-o-cog-6-tooth'),
+                MenuItem::make()
+                ->label('Pulse')
+                ->url('http://127.0.0.1:8000/pulse/')
+                ->icon('mdi-pulse'),
             ])
+
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
