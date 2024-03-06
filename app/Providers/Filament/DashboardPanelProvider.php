@@ -130,7 +130,7 @@ class DashboardPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 // Stat::make('Ciudades Registradas', City::query()->count()),
                 //Widgets\FilamentInfoWidget::class,
-                Widgets\PersonalInfoWidget::class,
+                //Widgets\PersonalInfoWidget::class,
 
             ])
             ->middleware([

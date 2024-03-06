@@ -9,7 +9,7 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 
 class CountryTypeOverview extends BaseWidget
-{
+{   protected static ?int $sort = 2;
     protected function getStats(): array
     {
         return [
