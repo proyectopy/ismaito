@@ -15,6 +15,7 @@ use Filament\Navigation\UserMenuItem;
 use Filament\Navigation\NavigationItem;
 use Filament\Navigation\NavigationGroup;
 use Filament\Http\Middleware\Authenticate;
+use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Awcodes\FilamentGravatar\GravatarPlugin;
 use Awcodes\FilamentGravatar\GravatarProvider;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -61,11 +62,19 @@ class DashboardPanelProvider extends PanelProvider
             ),)
             //mostrar gravatar
             ->defaultAvatarProvider(GravatarProvider::class)
+            //->authGuard('customers')
             ->plugins([
                 GravatarPlugin::make()
                 ->default('robohash')
                 ->size(200)
                 ->rating('pg'),
+                BreezyCore::make()
+                ->myProfile(
+                shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
+                shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
+                hasAvatars: false, // Enables the avatar upload form component (default = false)
+                slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
+            )
             ])
             //prueba
 

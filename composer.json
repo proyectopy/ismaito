@@ -16,6 +16,7 @@
         "codeat3/blade-carbon-icons": "^2.22",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
+        "jeffgreco13/filament-breezy": "^2.3",
         "laravel/framework": "^10.10",
         "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^3.3",
