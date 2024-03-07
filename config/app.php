@@ -170,6 +170,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         // IMPORTANT: add the following line AFTER "App\Providers\RouteServiceProvider::class,"
         App\Providers\CookiesServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ])->toArray(),
 
     /*
