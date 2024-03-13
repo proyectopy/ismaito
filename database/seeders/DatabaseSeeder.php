@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         'email' => 'ayu@admin.com',
         'password' =>Hash::make('123')
     ]);
-    
+    $this->call(CountriesStatesCitiesTableSeeder::class);
 
         // \App\Models\User::factory(10)->create();
 
