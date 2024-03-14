@@ -67,13 +67,15 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>  -->
 
-# Creacion del Proyecto Ismaito 
-### 28 de Febrero de 2024
+# Creacion del Proyecto Ismaito
+
+## 28 de Febrero de 2024
+### Inicio del Proyecto
 
 Proyecto tutorializado por Ismael Catalá en el cual empiezo a aprender algo de Laravel 10.x con Filamentphp 3.X de manera algo más avanzada.
 
-## Importante Actualizacion de Laravel
-### 13 de Marzo de 2023
+## 13 de Marzo de 2023
+### Importante Actualizacion de Laravel
 
 Hemos cambiado de versión de laravel a la V11.
 
@@ -87,8 +89,9 @@ He cambiado algunos archivos y eliminado algunas caracteristicas por incompatibi
 
 Ahora tenemos el proyecto actualizado.
 
-## Algunos cambios en tablas y Resources
 ### 14 de Marzo de 2023
+## Algunos cambios en tablas y Resources
+
 
 Creo archivos de Migraciones , sedders, Modelos y resources para completar la localizacion de los usuarios
 Un poco impreciso pero vamos a ir perfeccionandolo.
