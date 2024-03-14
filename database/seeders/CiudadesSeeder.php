@@ -1,18 +1,20 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace Database\Seeders;
 
-class CitiesTableSeeder extends Seeder
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class CiudadesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * the cities is large, we need to break it in parts
-     * @return void
      */
-    public function run()
+public function run()
     {
         //
- DB::table('cities')->delete();
+DB::table('cities')->delete();
 $cities = array(
 array('name' => "Bombuflat",'state_id' => 1),
 array('name' => "Garacharma",'state_id' => 1),
@@ -48394,6 +48396,6 @@ array('name' => "Lewisburg",'state_id' => 3976),
 array('name' => "Ravenswood",'state_id' => 3976),
 array('name' => "Summersville",'state_id' => 3976),
 		);
-        DB::table('cities')->insert($cities8);
+        DB::table('cities')->insert($cities);
     }
 }

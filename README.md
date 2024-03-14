@@ -86,5 +86,7 @@ He cambiado algunos archivos y eliminado algunas caracteristicas por incompatibi
 
 Ahora tenemos el proyecto actualizado.
 
+Creo archivos de Migraciones , sedders, Modelos y resources para completar la localizacion de los usuarios
+Un poco impreciso pero vamos a ir perfeccionandolo. 
 
 ### ... Continuamos

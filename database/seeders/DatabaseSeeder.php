@@ -8,6 +8,7 @@ use StatesTableSeeder;
 use CountriesTableSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Database\Seeders\CiudadesSeeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -17,16 +18,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-    //    DB::table('users')->insert([
-    //     'name' => 'Wild South',
-    //     'email' => 'wildsout@gmail.com',
-    //     'password' =>Hash::make('Th3passw0rdforL4r4v3l')
-    //]);
+       DB::table('users')->insert([
+        'name' => 'Wild South',
+        'email' => 'wildsout@gmail.com',
+        'password' =>Hash::make('Th3passw0rdforL4r4v3l')
+    ]);
 
-        // $this->call(CountriesTableSeeder::class);
-        // $this->call(StatesTableSeeder::class);
-        // $this->call(CitiesTableSeeder::class);
-
+        $this->call([
+            PaisesSeeder::class,
+            ProvinciasSeeder::class,
+            CiudadesSeeder::class,
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

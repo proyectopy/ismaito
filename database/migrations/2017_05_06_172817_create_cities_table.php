@@ -17,7 +17,8 @@ class CreateCitiesTable extends Migration
         $table->engine = 'InnoDB';
         $table->increments('id')->index();
         $table->string('name');
-        $table->integer('state_id');            
+        $table->integer('state_id');
+        $table->timestamps();
     });
     }
 

@@ -95,7 +95,7 @@ class UserResource extends Resource
                         })
                         ->required(),
                         Forms\Components\Select::make('country_id')
-                        //->relationship(name: 'Country', titleAttribute: 'name' )
+                        ->relationship(name: 'Country', titleAttribute: 'name' )
                         ->label('Pais')
                         ->searchable()
                         ->preload()
