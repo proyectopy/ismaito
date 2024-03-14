@@ -56,5 +56,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    
+    public function country()
+    {
+        return $this ->belongsTo(Country::class);
+    }
+
 }
