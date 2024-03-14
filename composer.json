@@ -8,23 +8,19 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
-        "altwaireb/laravel-countries-states-cities": "^1.0",
+        "php": "^8.2.0",
         "awcodes/filament-gravatar": "^2.0",
-        "bezhansalleh/filament-language-switch": "^3.0",
         "blade-ui-kit/blade-icons": "^1.6",
         "codeat3/blade-carbon-icons": "^2.22",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
-        "jeffgreco13/filament-breezy": "^2.3",
+        "jeffgreco13/filament-breezy": "^2.0",
         "laravel/framework": "^11.0",
         "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8",
-        "postare/blade-mdi": "^1.1",
         "shuvroroy/filament-spatie-laravel-backup": "^2.1",
-        "swisnl/filament-backgrounds": "^1.1",
-        "whitecube/laravel-cookie-consent": "^1.1"
+        "swisnl/filament-backgrounds": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",
@@ -32,7 +28,7 @@
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^8.0",
+        "nunomaduro/collision": "^8.1",
         "phpunit/phpunit": "^10.5",
         "spatie/laravel-ignition": "^2.4"
     },

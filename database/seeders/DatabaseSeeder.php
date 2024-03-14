@@ -15,11 +15,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
        DB::table('users')->insert([
-        'name' => 'Ayudante',
-        'email' => 'ayu@admin.com',
-        'password' =>Hash::make('123')
+        'name' => 'Wild South',
+        'email' => 'wildsout@gmail.com',
+        'password' =>Hash::make('Th3passw0rdforL4r4v3l')
     ]);
-    $this->call(CountriesStatesCitiesTableSeeder::class);
 
         // \App\Models\User::factory(10)->create();
 
