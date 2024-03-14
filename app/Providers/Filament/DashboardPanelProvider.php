@@ -126,7 +126,7 @@ class DashboardPanelProvider extends PanelProvider
                 MenuItem::make()
                 ->label('Pulse')
                 ->url('http://127.0.0.1:8000/pulse/')
-                ->icon('mdi-pulse'),
+                ->icon('heroicon-o-sparkles'),
             ])
 
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

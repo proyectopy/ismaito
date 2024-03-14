@@ -73,40 +73,13 @@ class UserResource extends Resource
                     Forms\Components\TextInput::make('postal_code')
                     ->columnSpan($span = 1)
                         ->label('Codigo Postal'),
-                    Forms\Components\Select::make('city_id')
-                    ->label('Ciudad')
-                    ->options(fn (Get $get): Collection => City::query()
-                        ->where('state_id', $get ('state_id'))
-                        ->pluck('name','id'))
-                    ->searchable()
-                    ->preload()
-                    ->live()
-                    ->required(),
-                    Forms\Components\Select::make('state_id')
-                        ->label('Provincia')
-                        ->options(fn (Get $get): Collection => State::query()
-                            ->where('country_id', $get ('country_id'))
-                            ->pluck('name','id'))
-                        ->searchable()
-                        ->preload()
-                        ->live()
-                        ->afterStateUpdated(function (Set $set){
-                            $set('city_id', null);
-                        })
-                        ->required(),
-                    Forms\Components\Select::make('country_id')
-                        ->relationship(name: 'Country', titleAttribute: 'name' )
-                        ->label('Pais')
-                        ->searchable()
-                        ->preload()
-                        ->live()
-                        ->afterStateUpdated(function (Set $set){
-                            $set('state_id', null);
-                            $set('city_id', null);
-                        })
-                        ->required(),
-
-
+                    Forms\Components\TextInput::make('city_id')
+                    ->label('Ciudad'),
+                    Forms\Components\TextInput::make('state_id')
+                        ->label('Provincia'),
+                    Forms\Components\TextInput::make('country_id')
+                        //->relationship(name: 'Country', titleAttribute: 'name' )
+                        ->label('Pais'),
                 ])
             ]);
     }
